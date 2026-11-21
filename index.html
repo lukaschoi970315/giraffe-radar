@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>기린의돈길 | 네이버 블로그 원터치 스튜디오 앱 PRO</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2303c75a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='38'%3E🦒%3C/text%3E%3C/svg%3E" />
-  <meta name="description" content="기린의돈길(giraffemoneyroad) 전용 단일 앱 스튜디오! 기발행 57편+ 중복 차단, 좌측 키워드 사이드바 즉시 전환, 순수 원고/우측 8장 사진 도크 분리 화면, 내부링크 추천 및 예약 큐를 한 페이지에서 제공합니다." />
+  <meta name="description" content="기린의돈길(giraffemoneyroad) 전용 단일 앱 스튜디오! 기발행 61편+ 중복 차단, 좌측 키워드 사이드바 즉시 전환, 순수 원고/우측 8장 사진 도크 분리 화면, 내부링크 추천 및 예약 큐를 한 페이지에서 제공합니다." />
   <style>
 :root {
   --bg-app: #eef2f6;
@@ -2157,7 +2157,7 @@ button {
             <span class="brand-badge">APP PRO</span>
           </div>
         </a>
-        <span id="top-sync-pill" class="header-live-pill">🟢 57편 자동동기화</span>
+        <span id="top-sync-pill" class="header-live-pill">🟢 61편 자동동기화</span>
       </div>
 
       <nav class="main-nav" aria-label="앱 메인 탭">
@@ -2172,7 +2172,7 @@ button {
           ⏰ 발행 큐
         </button>
         <button type="button" id="nav-tab-published" class="nav-tab" onclick="setActiveView('published')">
-          📚 내 글 57편 · 링크
+          📚 내 글 61편 · 링크
         </button>
       </nav>
 
@@ -2357,16 +2357,16 @@ button {
         <div class="app-view-scroll">
           <div class="hero-finder-card">
             <div class="hero-top-row" style="margin-bottom:8px;">
-              <h1 class="hero-title" style="margin:0;">🎯 황금 키워드 레이더 <span id="hero-published-chip" class="sidebar-count-pill">57편</span></h1>
+              <h1 class="hero-title" style="margin:0;">🎯 황금 키워드 레이더 <span id="hero-published-chip" class="sidebar-count-pill">61편</span></h1>
               <div class="hero-stats">
-                <span class="stat-chip"><strong>16 핵심 + 26 리저브</strong></span>
+                <span class="stat-chip"><strong>12 미발행 핵심 + 26 리저브</strong></span>
                 <span class="stat-chip" id="hero-photo-dedup-chip"><strong>133실사 · 중복차단 ON</strong></span>
               </div>
             </div>
 
             <form class="finder-form-grid" onsubmit="event.preventDefault(); runKeywordDiscovery();">
               <input id="discovery-seed-input" type="text" class="finder-input"
-                     placeholder="주제 입력 (예: 주택임대차, 도마, K패스, ISA계좌, 실업급여)" aria-label="키워드 입력" />
+                     placeholder="주제 입력 (예: 주택임대차, 월세공제, K패스, ISA계좌, 도마)" aria-label="키워드 입력" />
               <select id="discovery-cat-select" class="finder-select" aria-label="카테고리 선택">
                 <option value="AUTO">카테고리 자동</option>
                 <option value="생활·꿀팁">생활·꿀팁</option>
@@ -2385,7 +2385,7 @@ button {
 
             <div class="quick-seed-row">
               <button type="button" class="seed-chip" onclick="quickSeedClick('주택임대차신고방법')">주택임대차신고방법</button>
-              <button type="button" class="seed-chip" onclick="quickSeedClick('실업급여신청방법')">실업급여신청방법</button>
+              <button type="button" class="seed-chip" onclick="quickSeedClick('월세세액공제조건')">월세세액공제조건</button>
               <button type="button" class="seed-chip" onclick="quickSeedClick('K패스교통카드신청')">K패스교통카드신청</button>
               <button type="button" class="seed-chip" onclick="quickSeedClick('도마살균소독방법')">도마살균소독방법</button>
               <button type="button" class="seed-chip" onclick="quickSeedClick('변기물때제거방법')">변기물때제거방법</button>
@@ -2403,7 +2403,7 @@ button {
 
           <div class="radar-toolbar">
             <div class="cat-pills" role="tablist" aria-label="카테고리 필터">
-              <button type="button" id="cat-pill-all" class="cat-pill active" onclick="setCategoryFilter('ALL', this)">전체 (16)</button>
+              <button type="button" id="cat-pill-all" class="cat-pill active" onclick="setCategoryFilter('ALL', this)">전체 (12)</button>
               <button type="button" class="cat-pill" onclick="setCategoryFilter('생활·꿀팁', this)">🧼 생활·꿀팁</button>
               <button type="button" class="cat-pill" onclick="setCategoryFilter('가전·리빙', this)">🔌 가전·리빙</button>
               <button type="button" class="cat-pill" onclick="setCategoryFilter('재테크·지원금', this)">💰 재테크·지원금</button>
@@ -2433,7 +2433,7 @@ button {
         <div class="app-view-scroll">
           <div class="schedule-hero-card">
             <div class="hero-top-row" style="margin-bottom:6px;">
-              <h2 class="hero-title" style="font-size:17px; margin:0;">⏰ 비중복 예약발행 큐 <span id="sched-published-badge" class="sidebar-count-pill">57편 제외</span></h2>
+              <h2 class="hero-title" style="font-size:17px; margin:0;">⏰ 비중복 예약발행 큐 <span id="sched-published-badge" class="sidebar-count-pill">61편 제외</span></h2>
               <div class="schedule-preset-row" style="margin:0;">
                 <button type="button" class="cadence-preset-pill" data-hours="24" onclick="setScheduleIntervalPreset(24)">1일 1건 (24h)</button>
                 <button type="button" class="cadence-preset-pill active" data-hours="12" onclick="setScheduleIntervalPreset(12)">1일 2건 (12h · 권장)</button>
@@ -2476,7 +2476,7 @@ button {
       <section id="view-published" class="view-panel" aria-label="내 블로그 기발행 글 및 내부링크">
         <div class="app-view-scroll">
           <div class="published-toolbar-card">
-            <h2 class="hero-title" style="font-size:17px; margin:0;">📚 내 글 · 내부링크 URL <span id="published-view-count" class="sidebar-count-pill">총 57편</span></h2>
+            <h2 class="hero-title" style="font-size:17px; margin:0;">📚 내 글 · 내부링크 URL <span id="published-view-count" class="sidebar-count-pill">총 61편</span></h2>
             <div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
               <input id="published-search-input" type="search" class="filter-search" placeholder="글 검색 (예: 욕실, 전세, 스텐)..." aria-label="기발행 글 검색" />
               <button type="button" id="btn-sync-published" class="btn-outline btn-xs" onclick="syncLiveBlogPosts(false)">🔄 동기화</button>
@@ -2514,7 +2514,7 @@ button {
         </article>
         <article class="guide-card">
           <span class="guide-step-num">STEP 03 · 내부링크 &amp; 중복 차단</span>
-          <h3><span id="guide-published-count">57편</span> 자동 제외 + 관련 글 연결</h3>
+          <h3><span id="guide-published-count">61편</span> 자동 제외 + 관련 글 연결</h3>
           <p>
             새 글 발행이 끝나면 사이드바의 <b>✓</b> 또는 <b>[✅ 발행완료 · 지우기]</b>를 눌러 즉시 다음 주제로 넘어가세요. <b>[🏷️ 태그 · 내부링크]</b> 탭에서 관련 기발행 글 URL을 복사해 글 맨 아래에 넣으면 PV가 오릅니다.
           </p>
@@ -2644,6 +2644,22 @@ let GLOBAL_PHOTO_ALLOC_CACHE = { sig: '', plan: null };
 
 // Photos already published in existing 57 blog posts on giraffemoneyroad (strictly treated as ALREADY USED by default)
 const PUBLISHED_USED_PHOTO_META = {
+  'cc0:unemp_laptop': '실업급여신청방법 (기발행)',
+  'cc0:unemp_resume': '실업급여신청방법 (기발행)',
+  'cc0:unemp_mobile': '실업급여신청방법 (기발행)',
+  'cc0:unemp_contract': '실업급여신청방법 (기발행)',
+  'cc0:youth_app': '청년도약계좌중도해지 (기발행)',
+  'cc0:youth_sign': '청년도약계좌중도해지 (기발행)',
+  'cc0:youth_coins': '청년도약계좌중도해지 (기발행)',
+  'cc0:youth_piggy': '청년도약계좌중도해지 (기발행)',
+  'cc0:juhyu_cafe': '주휴수당계산법 (기발행)',
+  'cc0:juhyu_barista': '주휴수당계산법 (기발행)',
+  'cc0:juhyu_chart': '주휴수당계산법 (기발행)',
+  'cc0:juhyu_notes': '주휴수당계산법 (기발행)',
+  'cc0:money_card': '신용점수올리는법 (기발행)',
+  'cc0:credit_tap': '신용점수올리는법 (기발행)',
+  'cc0:fin_calc': '신용점수올리는법 (기발행)',
+  'cc0:credit_work': '신용점수올리는법 (기발행)',
   'cc0:jeonse_mobile_check': '전세보증보험반환보증 (기발행)',
   'cc0:jeonse_registry_papers': '전세보증보험반환보증 (기발행)',
   'cc0:jeonse_special_clause': '전세보증보험반환보증 (기발행)',
@@ -4374,8 +4390,12 @@ function detectDomainHint(kw, category) {
 
 // Dynamic Naver Home Feed & Search Keyword Discovery Engine + Live Sync Deduplication + Persistence + Reserve Golden Expansion Bank
 
-// All 57 live posts published on https://blog.naver.com/giraffemoneyroad (synced 2026-11-17 23:50)
+// All 61 live posts published on https://blog.naver.com/giraffemoneyroad (synced 2026-11-21 12:30)
 const PUBLISHED_BLOG_POSTS = [
+  {"logNo": "224485136489", "kw": "청년도약계좌중도해지", "date": "2026-11-21 12:30", "title": "청년도약계좌중도해지 시 정부기여금·비과세 살리는 특별중도해지 요건", "url": "https://blog.naver.com/giraffemoneyroad/224485136489"},
+  {"logNo": "224485125368", "kw": "신용점수올리는법", "date": "2026-11-21 07:20", "title": "신용점수 조회하면 정말 떨어질까? 한국신용정보원 크레딧포유 무료 조회 팩트체크", "url": "https://blog.naver.com/giraffemoneyroad/224485125368"},
+  {"logNo": "224485101290", "kw": "주휴수당계산법", "date": "2026-11-20 23:40", "title": "주휴수당 안 주거나 시급 포함이라 할 때 대처법 (임금채권 소멸시효 3년)", "url": "https://blog.naver.com/giraffemoneyroad/224485101290"},
+  {"logNo": "224485091697", "kw": "실업급여신청방법", "date": "2026-11-20 19:03", "title": "자발적 퇴사도 실업급여 가능할까? 법정 정당 사유 & 12개월 소멸시효 체크리스트", "url": "https://blog.naver.com/giraffemoneyroad/224485091697"},
   {"logNo": "224480490330", "kw": "텀블러물때제거", "date": "2026-11-17 23:50", "title": "텀블러물때제거, 락스 붓고 뚜껑 닫으면 안 되는 이유! 구연산 오픈 불림 4단계", "url": "https://blog.naver.com/giraffemoneyroad/224480490330"},
   {"logNo": "224480432926", "kw": "퇴직금계산방법", "date": "2026-11-17 17:10", "title": "아르바이트·수습사원도 퇴직금 받나? 주 15시간 조건 및 체불 지연이자 20% 체크", "url": "https://blog.naver.com/giraffemoneyroad/224480432926"},
   {"logNo": "224480366878", "kw": "욕실환풍기청소", "date": "2026-11-17 12:14", "title": "화장실 담배·하수구 냄새 역류 잡는 욕실환풍기청소 & 전동댐퍼 점검법", "url": "https://blog.naver.com/giraffemoneyroad/224480366878"},
@@ -4437,6 +4457,10 @@ const PUBLISHED_BLOG_POSTS = [
 
 // Close semantic overlap rules (different phrasing for same topic already published on giraffemoneyroad)
 const PUBLISHED_OVERLAP_RULES = [
+  { pattern: /청년도약계좌/, refKw: '청년도약계좌중도해지', date: '2026-11-21' },
+  { pattern: /신용점수|신용평점|크레딧포유/, refKw: '신용점수올리는법', date: '2026-11-21' },
+  { pattern: /주휴수당/, refKw: '주휴수당계산법', date: '2026-11-20' },
+  { pattern: /실업급여|구직급여/, refKw: '실업급여신청방법', date: '2026-11-20' },
   { pattern: /텀블러|보온병/, refKw: '텀블러물때제거', date: '2026-11-17' },
   { pattern: /퇴직금|퇴직급여/, refKw: '퇴직금 (아르바이트·수습사원 퇴직금 기발행)', date: '2026-11-17' },
   { pattern: /욕실환풍기|환풍기청소|전동댐퍼/, refKw: '욕실환풍기청소', date: '2026-11-17' },
@@ -4586,10 +4610,14 @@ function savePersistedCustomItems(list) {
 
 function getAllPublishedPosts() {
   const merged = [];
+  const seenLogNos = new Set();
   const seenTitles = new Set();
   for (const p of [...RUNTIME_LIVE_POSTS, ...PUBLISHED_BLOG_POSTS]) {
+    const logNo = String(p.logNo || '').trim();
     const tNorm = normalizeKwKey(p.title || p.kw);
+    if (logNo && seenLogNos.has(logNo)) continue;
     if (!tNorm || seenTitles.has(tNorm)) continue;
+    if (logNo) seenLogNos.add(logNo);
     seenTitles.add(tNorm);
     merged.push(p);
   }
@@ -4613,19 +4641,26 @@ function mergeLiveBlogPosts(posts, totalCount = 0) {
       url: String(p.url || fallbackUrl).trim()
     };
   });
-  RUNTIME_LIVE_POSTS = normalized;
+  // Merge with existing RUNTIME_LIVE_POSTS by logNo so RSS partial feeds (10~50 items) only add new posts
+  const byLogNo = new Map();
+  for (const p of [...normalized, ...RUNTIME_LIVE_POSTS]) {
+    const key = p.logNo || normalizeKwKey(p.title);
+    if (key && !byLogNo.has(key)) byLogNo.set(key, p);
+  }
+  RUNTIME_LIVE_POSTS = [...byLogNo.values()];
   if (Number(totalCount) > 0) RUNTIME_LIVE_TOTAL_COUNT = Number(totalCount);
+  invalidatePhotoAllocationCache();
   safeStorageSet(
     STORAGE_LIVE_CACHE_KEY,
     JSON.stringify({
       totalCount: getTotalPublishedCount(),
-      posts: normalized.slice(0, 80),
+      posts: RUNTIME_LIVE_POSTS.slice(0, 100),
       syncedAt: new Date().toISOString()
     })
   );
   return {
     totalCount: getTotalPublishedCount(),
-    postsCount: normalized.length
+    postsCount: getAllPublishedPosts().length
   };
 }
 
@@ -10631,7 +10666,7 @@ function buildNaverArticleFor(item, plan) {
 function getDefaultFreshItem() {
   const pool = [...(typeof CUSTOM_ITEMS !== 'undefined' ? CUSTOM_ITEMS : []), ...RADAR_DATA];
   if (typeof checkPublishedStatus === 'function') {
-    const preferred = pool.find(it => it.keyword === '실업급여신청방법' && checkPublishedStatus(it.keyword).status === 'fresh');
+    const preferred = pool.find(it => it.keyword === '주택임대차신고방법' && checkPublishedStatus(it.keyword).status === 'fresh');
     if (preferred) return preferred;
     const fresh = pool.find(it => checkPublishedStatus(it.keyword).status === 'fresh');
     if (fresh) return fresh;
@@ -11108,7 +11143,7 @@ function updatePublishedStatsUI(syncMeta = lastLiveSyncMeta) {
   if (syncMeta !== undefined) lastLiveSyncMeta = syncMeta;
   const allItems = getAllItems();
   const freshItems = allItems.filter(it => typeof checkPublishedStatus !== 'function' || checkPublishedStatus(it.keyword).status === 'fresh');
-  const totalPub = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 57;
+  const totalPub = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 61;
   const manualWritten = typeof getManualWrittenList === 'function' ? getManualWrittenList() : [];
 
   const allPill = document.getElementById('cat-pill-all');
@@ -12105,7 +12140,7 @@ function renderScheduleView() {
 
   const totalPool = getAllItems().length;
   const skippedCount = Math.max(0, totalPool - currentScheduleQueue.length);
-  const rssCount = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 57;
+  const rssCount = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 61;
   const totalPhotos = currentScheduleQueue.length * 8;
   const manualWritten = typeof getManualWrittenList === 'function' ? getManualWrittenList() : [];
 
@@ -12200,7 +12235,7 @@ function copyFullScheduleSummary() {
     showToast('⚠️ 복사할 예약 슬롯이 없습니다.');
     return;
   }
-  const rssCount = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 57;
+  const rssCount = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 61;
   const lines = [
     '[기린의돈길 (giraffemoneyroad) 비중복 예약발행 큐]',
     `생성 기준: 기존 기발행 ${rssCount}편 제외 · 소제목당 사진 2장(총 8장) 매칭`,
@@ -12354,9 +12389,83 @@ function hasLiveSyncBackend() {
   return (proto === 'http:' || proto === 'https:') && (host === 'localhost' || host === '127.0.0.1');
 }
 
+function canUsePublicRssSync() {
+  if (typeof window === 'undefined') return false;
+  const proto = window.location.protocol;
+  return proto === 'http:' || proto === 'https:';
+}
+
+async function fetchLiveBlogPostsFromPublicRss() {
+  const rssUrl = 'https://rss.blog.naver.com/giraffemoneyroad.xml';
+  // 1) Try rss2json CORS API (fast JSON response with access-control-allow-origin)
+  try {
+    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    const timer = controller ? setTimeout(() => controller.abort(), 4500) : null;
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+    const resp = await fetch(apiUrl, {
+      method: 'GET',
+      cache: 'no-store',
+      signal: controller ? controller.signal : undefined
+    });
+    if (timer) clearTimeout(timer);
+    if (resp.ok) {
+      const json = await resp.json();
+      if (json && json.status === 'ok' && Array.isArray(json.items) && json.items.length > 0) {
+        const posts = json.items.map(it => {
+          const link = String(it.link || '').split('?')[0];
+          const m = link.match(/\/(\d{10,15})$/);
+          const logNo = m ? m[1] : String(it.guid || '').replace(/[^0-9]/g, '');
+          const title = String(it.title || '').replace(/&quot;/g, '"').replace(/&amp;/g, '&').trim();
+          const date = String(it.pubDate || '').slice(0, 16);
+          return { logNo, title, date, url: link || `https://blog.naver.com/giraffemoneyroad/${logNo}` };
+        }).filter(p => p.logNo && p.title);
+        if (posts.length > 0) {
+          return { ok: true, posts };
+        }
+      }
+    }
+  } catch (e) {}
+
+  // 2) Fallback: codetabs raw XML proxy
+  try {
+    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    const timer = controller ? setTimeout(() => controller.abort(), 5000) : null;
+    const xmlResp = await fetch(`https://api.codetabs.com/v1/proxy?quest=${rssUrl}`, {
+      method: 'GET',
+      cache: 'no-store',
+      signal: controller ? controller.signal : undefined
+    });
+    if (timer) clearTimeout(timer);
+    if (xmlResp.ok && typeof DOMParser !== 'undefined') {
+      const xmlText = await xmlResp.text();
+      const doc = new DOMParser().parseFromString(xmlText, 'text/xml');
+      const items = [...doc.querySelectorAll('item')];
+      const posts = items.map(node => {
+        const rawLink = (node.querySelector('link')?.textContent || '').trim().split('?')[0];
+        const m = rawLink.match(/\/(\d{10,15})$/);
+        const logNo = m ? m[1] : '';
+        const title = (node.querySelector('title')?.textContent || '').trim();
+        const pubDate = (node.querySelector('pubDate')?.textContent || '').trim();
+        let dateStr = pubDate.slice(0, 16);
+        const parsedD = new Date(pubDate);
+        if (!isNaN(parsedD.getTime())) {
+          const pad = n => String(n).padStart(2, '0');
+          dateStr = `${parsedD.getFullYear()}-${pad(parsedD.getMonth() + 1)}-${pad(parsedD.getDate())} ${pad(parsedD.getHours())}:${pad(parsedD.getMinutes())}`;
+        }
+        return { logNo, title, date: dateStr, url: rawLink || `https://blog.naver.com/giraffemoneyroad/${logNo}` };
+      }).filter(p => p.logNo && p.title);
+      if (posts.length > 0) {
+        return { ok: true, posts };
+      }
+    }
+  } catch (e) {}
+
+  return null;
+}
+
 async function syncLiveBlogPosts(silent = false) {
-  if (!hasLiveSyncBackend()) {
-    const fallbackCnt = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 57;
+  if (!hasLiveSyncBackend() && !canUsePublicRssSync()) {
+    const fallbackCnt = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 61;
     updatePublishedStatsUI(lastLiveSyncMeta);
     if (!silent) {
       showToast(`🟢 ${fallbackCnt}편 동기화됨`);
@@ -12380,16 +12489,21 @@ async function syncLiveBlogPosts(silent = false) {
   });
 
   try {
-    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
-    const timer = controller ? setTimeout(() => controller.abort(), 3500) : null;
-    const resp = await fetch('/api/blog-posts?blogId=giraffemoneyroad', {
-      method: 'GET',
-      cache: 'no-store',
-      signal: controller ? controller.signal : undefined
-    });
-    if (timer) clearTimeout(timer);
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const data = await resp.json();
+    let data = null;
+    if (hasLiveSyncBackend() || canUsePublicRssSync()) {
+      const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+      const timer = controller ? setTimeout(() => controller.abort(), 3500) : null;
+      const resp = await fetch('/api/blog-posts?blogId=giraffemoneyroad', {
+        method: 'GET',
+        cache: 'no-store',
+        signal: controller ? controller.signal : undefined
+      });
+      if (timer) clearTimeout(timer);
+      if (resp.ok) data = await resp.json();
+    }
+    if (!data || !data.ok || !Array.isArray(data.posts)) {
+      data = await fetchLiveBlogPostsFromPublicRss();
+    }
     if (!data || !data.ok || !Array.isArray(data.posts)) {
       throw new Error('Invalid blog sync response');
     }
@@ -12434,7 +12548,7 @@ async function syncLiveBlogPosts(silent = false) {
   } catch (err) {
     updatePublishedStatsUI(lastLiveSyncMeta);
     if (!silent) {
-      const fallbackCnt = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 57;
+      const fallbackCnt = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 61;
       showToast(`🟢 ${fallbackCnt}편 기준`);
     }
   } finally {
