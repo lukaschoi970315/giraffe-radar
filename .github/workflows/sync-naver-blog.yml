@@ -16,7 +16,7 @@ jobs:
       - name: Fetch real-time Naver Blog PostTitleListAsync
         run: |
           python3 - << 'PYEOF'
-          import urllib.request, urllib.parse, json, html
+          import urllib.request, urllib.parse, json, html, os
 
           headers = {
               "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
@@ -51,15 +51,26 @@ jobs:
                   print("Page fetch warning:", page, e)
 
           if all_posts:
-              with open("live_posts.json", "w", encoding="utf-8") as f:
-                  json.dump({
-                      "ok": True,
-                      "totalCount": max(total_count, len(all_posts)),
-                      "posts": all_posts
-                  }, f, ensure_ascii=False, indent=2)
-              print("Synced", len(all_posts), "posts.")
+              prev_log_nos = []
+              if os.path.exists("live_posts.json"):
+                  try:
+                      prev = json.load(open("live_posts.json", "r", encoding="utf-8"))
+                      prev_log_nos = [str(x.get("logNo", "")) for x in prev.get("posts", [])]
+                  except Exception:
+                      pass
+              cur_log_nos = [str(x.get("logNo", "")) for x in all_posts]
+              if cur_log_nos != prev_log_nos:
+                  with open("live_posts.json", "w", encoding="utf-8") as f:
+                      json.dump({
+                          "ok": True,
+                          "totalCount": max(total_count, len(all_posts)),
+                          "posts": all_posts
+                      }, f, ensure_ascii=False, indent=2)
+                  print("New blog posts detected! Updated live_posts.json:", len(all_posts))
+              else:
+                  print("No new blog posts (still", len(all_posts), "posts). Skipping commit.")
           PYEOF
-      - name: Commit and push if changed
+      - name: Commit and push if new post detected
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
