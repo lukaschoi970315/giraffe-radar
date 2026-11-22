@@ -1,0 +1,57 @@
+name: Auto Sync Naver Blog Posts
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-blog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch real-time Naver Blog PostTitleListAsync
+        run: |
+          python3 - << 'PYEOF'
+          import urllib.request, urllib.parse, json
+          headers = {
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+              "Referer": "https://blog.naver.com/PostList.naver?blogId=giraffemoneyroad"
+          }
+          all_posts = []
+          seen = set()
+          total_count = 0
+          for page in range(1, 5):
+              url = f"https://blog.naver.com/PostTitleListAsync.naver?blogId=giraffemoneyroad&viewdate=&currentPage={page}&categoryNo=&parentCategoryNo=&countPerPage=30"
+              raw = urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=10).read().decode("utf-8", "ignore")
+              data = json.loads(raw.replace("\'", "'"), strict=False)
+              if data.get("totalCount"):
+                  total_count = int(data["totalCount"])
+              for p in data.get("postList", []):
+                  log_no = str(p.get("logNo", "")).strip()
+                  if not log_no or log_no in seen: continue
+                  seen.add(log_no)
+                  title = urllib.parse.unquote_plus(p.get("title", "")).replace("&quot;", """).replace("&amp;", "&").replace("&#39;", "'").strip()
+                  add_date = str(p.get("addDate", "")).strip()
+                  all_posts.append({
+                      "logNo": log_no,
+                      "date": add_date,
+                      "title": title,
+                      "url": f"https://blog.naver.com/giraffemoneyroad/{log_no}"
+                  })
+          if all_posts:
+              with open("live_posts.json", "w", encoding="utf-8") as f:
+                  json.dump({"ok": True, "totalCount": max(total_count, len(all_posts)), "posts": all_posts}, f, ensure_ascii=False, indent=2)
+          PYEOF
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet live_posts.json; then
+            git add live_posts.json
+            git commit -m "Auto-sync latest published Naver blog posts"
+            git push
+          fi

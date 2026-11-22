@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>기린의돈길 | 네이버 블로그 원터치 스튜디오 앱 PRO</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2303c75a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='38'%3E🦒%3C/text%3E%3C/svg%3E" />
-  <meta name="description" content="기린의돈길(giraffemoneyroad) 전용 단일 앱 스튜디오! 기발행 62편+ 중복 차단, 좌측 키워드 사이드바 즉시 전환, 순수 원고/우측 8장 사진 도크 분리 화면, 내부링크 추천 및 예약 큐를 한 페이지에서 제공합니다." />
+  <meta name="description" content="기린의돈길(giraffemoneyroad) 전용 단일 앱 스튜디오! 기발행 63편+ 중복 차단, 좌측 키워드 사이드바 즉시 전환, 순수 원고/우측 8장 사진 도크 분리 화면, 내부링크 추천 및 예약 큐를 한 페이지에서 제공합니다." />
   <style>
 :root {
   --bg-app: #eef2f6;
@@ -2175,7 +2175,7 @@ button {
           ⏰ 발행 큐
         </button>
         <button type="button" id="nav-tab-published" class="nav-tab" onclick="setActiveView('published')">
-          📚 내 글 62편 · 링크
+          📚 내 글 63편 · 링크
         </button>
       </nav>
 
@@ -2436,7 +2436,7 @@ button {
         <div class="app-view-scroll">
           <div class="schedule-hero-card">
             <div class="hero-top-row" style="margin-bottom:6px;">
-              <h2 class="hero-title" style="font-size:17px; margin:0;">⏰ 비중복 예약발행 큐 <span id="sched-published-badge" class="sidebar-count-pill">62편 제외</span></h2>
+              <h2 class="hero-title" style="font-size:17px; margin:0;">⏰ 비중복 예약발행 큐 <span id="sched-published-badge" class="sidebar-count-pill">63편 제외</span></h2>
               <div class="schedule-preset-row" style="margin:0;">
                 <button type="button" class="cadence-preset-pill" data-hours="24" onclick="setScheduleIntervalPreset(24)">1일 1건 (24h)</button>
                 <button type="button" class="cadence-preset-pill active" data-hours="12" onclick="setScheduleIntervalPreset(12)">1일 2건 (12h · 권장)</button>
@@ -2647,6 +2647,10 @@ let GLOBAL_PHOTO_ALLOC_CACHE = { sig: '', plan: null };
 
 // Photos already published in existing 57 blog posts on giraffemoneyroad (strictly treated as ALREADY USED by default)
 const PUBLISHED_USED_PHOTO_META = {
+  'cc0:kpass_seoul1': 'K패스교통카드신청 (기발행)',
+  'cc0:kpass_gate1': 'K패스교통카드신청 (기발행)',
+  'cc0:kpass_card_tag_kr': 'K패스교통카드신청 (기발행)',
+  'cc0:kpass_train2': 'K패스교통카드신청 (기발행)',
   'cc0:rent_kr_apt_exterior': '월세세액공제조건 (기발행)',
   'cc0:rent_tax_receipt': '월세세액공제조건 (기발행)',
   'cc0:rent_hometax_laptop': '월세세액공제조건 (기발행)',
@@ -4418,6 +4422,7 @@ function detectDomainHint(kw, category) {
 
 // All 61 live posts published on https://blog.naver.com/giraffemoneyroad (synced 2026-11-21 12:30)
 const PUBLISHED_BLOG_POSTS = [
+  { logNo: '224487096439', date: '2026-11-21', kw: 'K패스교통카드신청', title: 'K패스교통카드신청 방법 총정리! 2026 모두의카드(일반20%·청년30%·저소득53%·다자녀50%)', url: 'https://blog.naver.com/giraffemoneyroad/224487096439' },
   { logNo: '224485333879', date: '2026-11-21', kw: '월세세액공제조건', title: '월세세액공제조건 총정리! 총급여 8,000만 이하 15%·17% & 연 1,000만 한도 기준', url: 'https://blog.naver.com/giraffemoneyroad/224485333879' },
   {"logNo": "224485136489", "kw": "청년도약계좌중도해지", "date": "2026-11-21 12:30", "title": "청년도약계좌중도해지 시 정부기여금·비과세 살리는 특별중도해지 요건", "url": "https://blog.naver.com/giraffemoneyroad/224485136489"},
   {"logNo": "224485125368", "kw": "신용점수올리는법", "date": "2026-11-21 07:20", "title": "신용점수 조회하면 정말 떨어질까? 한국신용정보원 크레딧포유 무료 조회 팩트체크", "url": "https://blog.naver.com/giraffemoneyroad/224485125368"},
@@ -11173,7 +11178,7 @@ function updatePublishedStatsUI(syncMeta = lastLiveSyncMeta) {
   if (syncMeta !== undefined) lastLiveSyncMeta = syncMeta;
   const allItems = getAllItems();
   const freshItems = allItems.filter(it => typeof checkPublishedStatus !== 'function' || checkPublishedStatus(it.keyword).status === 'fresh');
-  const totalPub = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 62;
+  const totalPub = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 63;
   const manualWritten = typeof getManualWrittenList === 'function' ? getManualWrittenList() : [];
 
   const allPill = document.getElementById('cat-pill-all');
@@ -12171,7 +12176,7 @@ function renderScheduleView() {
 
   const totalPool = getAllItems().length;
   const skippedCount = Math.max(0, totalPool - currentScheduleQueue.length);
-  const rssCount = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 62;
+  const rssCount = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 63;
   const totalPhotos = currentScheduleQueue.length * 8;
   const manualWritten = typeof getManualWrittenList === 'function' ? getManualWrittenList() : [];
 
@@ -12266,7 +12271,7 @@ function copyFullScheduleSummary() {
     showToast('⚠️ 복사할 예약 슬롯이 없습니다.');
     return;
   }
-  const rssCount = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 62;
+  const rssCount = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 63;
   const lines = [
     '[기린의돈길 (giraffemoneyroad) 비중복 예약발행 큐]',
     `생성 기준: 기존 기발행 ${rssCount}편 제외 · 소제목당 사진 2장(총 8장) 매칭`,
@@ -12427,7 +12432,7 @@ function canUsePublicRssSync() {
 }
 
 async function fetchLiveBlogPostsFromPublicRss() {
-  const rssUrl = 'https://rss.blog.naver.com/giraffemoneyroad.xml';
+  const cb = Date.now();
   const decodeEntities = (str) => String(str || '')
     .replace(/&quot;/g, '"')
     .replace(/&amp;/g, '&')
@@ -12436,88 +12441,100 @@ async function fetchLiveBlogPostsFromPublicRss() {
     .replace(/&gt;/g, '>')
     .trim();
 
-  // 1) Try rss2json CORS API (fast JSON response with access-control-allow-origin: *)
-  try {
+  const collected = [];
+  const seenLogNo = new Set();
+  let maxReportedTotal = 0;
+
+  const addPost = (p) => {
+    if (!p || !p.logNo || !p.title) return;
+    const lno = String(p.logNo).trim();
+    if (!lno || seenLogNo.has(lno)) return;
+    seenLogNo.add(lno);
+    collected.push({
+      logNo: lno,
+      title: decodeEntities(p.title),
+      date: String(p.date || '').slice(0, 16),
+      url: p.url || `https://blog.naver.com/giraffemoneyroad/${lno}`
+    });
+  };
+
+  const fetchRss2Json = async (suffix) => {
     const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
     const timer = controller ? setTimeout(() => controller.abort(), 5000) : null;
-    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-    const resp = await fetch(apiUrl, {
-      method: 'GET',
-      cache: 'no-store',
-      signal: controller ? controller.signal : undefined
-    });
-    if (timer) clearTimeout(timer);
-    if (resp.ok) {
-      const json = await resp.json();
-      if (json && json.status === 'ok' && Array.isArray(json.items) && json.items.length > 0) {
-        const posts = json.items.map(it => {
-          const link = String(it.link || '').split('?')[0];
-          const m = link.match(/\/(\d{10,15})$/);
-          const logNo = m ? m[1] : String(it.guid || '').replace(/[^0-9]/g, '');
-          const title = decodeEntities(it.title);
-          const date = String(it.pubDate || '').slice(0, 16);
-          return { logNo, title, date, url: link || `https://blog.naver.com/giraffemoneyroad/${logNo}` };
-        }).filter(p => p.logNo && p.title);
-        if (posts.length > 0) {
-          return { ok: true, posts };
-        }
-      }
-    }
-  } catch (e) {}
-
-  // 2) Fallback: allorigins JSON wrapper or codetabs raw XML proxy
-  const xmlProxies = [
-    `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl + '?t=' + Date.now())}`,
-    `https://api.codetabs.com/v1/proxy?quest=${rssUrl}`
-  ];
-  for (const proxyUrl of xmlProxies) {
     try {
-      const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
-      const timer = controller ? setTimeout(() => controller.abort(), 5000) : null;
-      const resp = await fetch(proxyUrl, {
+      const rssUrl = `https://rss.blog.naver.com/giraffemoneyroad.xml?t=${suffix}`;
+      const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+      const resp = await fetch(apiUrl, {
         method: 'GET',
         cache: 'no-store',
         signal: controller ? controller.signal : undefined
       });
+      if (!resp.ok) return [];
+      const json = await resp.json();
+      if (json && json.status === 'ok' && Array.isArray(json.items)) {
+        return json.items.map(it => {
+          const link = String(it.link || '').split('?')[0];
+          const m = link.match(/\/(\d{10,15})$/);
+          const logNo = m ? m[1] : String(it.guid || '').replace(/[^0-9]/g, '');
+          return {
+            logNo,
+            title: it.title,
+            date: String(it.pubDate || '').slice(0, 16),
+            url: link || `https://blog.naver.com/giraffemoneyroad/${logNo}`
+          };
+        });
+      }
+    } catch (e) {
+    } finally {
       if (timer) clearTimeout(timer);
-      if (!resp.ok) continue;
-      let xmlText = '';
-      if (proxyUrl.includes('allorigins.win/get')) {
-        const j = await resp.json();
-        xmlText = j && j.contents ? String(j.contents) : '';
-      } else {
-        xmlText = await resp.text();
-      }
-      if (xmlText && typeof DOMParser !== 'undefined') {
-        const doc = new DOMParser().parseFromString(xmlText, 'text/xml');
-        const items = [...doc.querySelectorAll('item')];
-        const posts = items.map(node => {
-          const rawLink = (node.querySelector('link')?.textContent || '').trim().split('?')[0];
-          const m = rawLink.match(/\/(\d{10,15})$/);
-          const logNo = m ? m[1] : '';
-          const title = decodeEntities(node.querySelector('title')?.textContent || '');
-          const pubDate = (node.querySelector('pubDate')?.textContent || '').trim();
-          let dateStr = pubDate.slice(0, 16);
-          const parsedD = new Date(pubDate);
-          if (!isNaN(parsedD.getTime())) {
-            const pad = n => String(n).padStart(2, '0');
-            dateStr = `${parsedD.getFullYear()}-${pad(parsedD.getMonth() + 1)}-${pad(parsedD.getDate())} ${pad(parsedD.getHours())}:${pad(parsedD.getMinutes())}`;
-          }
-          return { logNo, title, date: dateStr, url: rawLink || `https://blog.naver.com/giraffemoneyroad/${logNo}` };
-        }).filter(p => p.logNo && p.title);
-        if (posts.length > 0) {
-          return { ok: true, posts };
-        }
-      }
-    } catch (e) {}
-  }
+    }
+    return [];
+  };
 
+  const fetchLocalLiveJson = async () => {
+    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    const timer = controller ? setTimeout(() => controller.abort(), 3000) : null;
+    try {
+      const resp = await fetch(`./live_posts.json?cb=${cb}`, {
+        method: 'GET',
+        cache: 'no-store',
+        signal: controller ? controller.signal : undefined
+      });
+      if (!resp.ok) return [];
+      const j = await resp.json();
+      if (Number(j?.totalCount) > maxReportedTotal) maxReportedTotal = Number(j.totalCount);
+      return Array.isArray(j?.posts) ? j.posts : [];
+    } catch (e) {
+    } finally {
+      if (timer) clearTimeout(timer);
+    }
+    return [];
+  };
+
+  // Query multiple uncached Naver RSS backend nodes + live_posts.json concurrently and merge their union!
+  const results = await Promise.all([
+    fetchRss2Json(`${cb}_1`),
+    fetchRss2Json(`${cb}_2`),
+    fetchRss2Json('999'),
+    fetchLocalLiveJson()
+  ]);
+
+  results.forEach(list => {
+    if (Array.isArray(list)) list.forEach(addPost);
+  });
+
+  // Sort newest logNo first so collected[0] is always the latest published post
+  collected.sort((a, b) => Number(b.logNo || 0) - Number(a.logNo || 0));
+
+  if (collected.length > 0) {
+    return { ok: true, totalCount: Math.max(maxReportedTotal, collected.length), posts: collected };
+  }
   return null;
 }
 
 async function syncLiveBlogPosts(silent = false) {
   if (!hasLiveSyncBackend() && !canUsePublicRssSync()) {
-    const fallbackCnt = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 62;
+    const fallbackCnt = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 63;
     updatePublishedStatsUI(lastLiveSyncMeta);
     if (!silent) {
       showToast(`🟢 ${fallbackCnt}편 동기화됨`);
@@ -12541,6 +12558,11 @@ async function syncLiveBlogPosts(silent = false) {
   });
 
   try {
+    const prevCount = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 63;
+    const prevKnownLogNos = new Set(
+      (typeof getAllPublishedPosts === 'function' ? getAllPublishedPosts() : []).map(p => String(p.logNo || '').trim()).filter(Boolean)
+    );
+
     let data = null;
     if (hasLiveSyncBackend()) {
       try {
@@ -12562,19 +12584,14 @@ async function syncLiveBlogPosts(silent = false) {
       throw new Error('Invalid blog sync response');
     }
 
-    const newLatest = String(data.posts[0]?.logNo || '');
-    const newTotal = Number(data.totalCount || data.posts.length || 0);
-    const hasNewChange = Boolean(
-      (lastSyncedLatestLogNo && newLatest && lastSyncedLatestLogNo !== newLatest) ||
-      (lastSyncedTotalCount && newTotal !== lastSyncedTotalCount)
-    );
-    const isFirstSync = !lastSyncedLatestLogNo;
-
+    const newlyDetected = data.posts.filter(p => p && p.logNo && !prevKnownLogNos.has(String(p.logNo).trim()));
     const res = typeof mergeLiveBlogPosts === 'function'
       ? mergeLiveBlogPosts(data.posts, data.totalCount)
-      : { totalCount: newTotal };
+      : { totalCount: Math.max(prevCount, data.posts.length) };
 
-    lastSyncedLatestLogNo = newLatest;
+    const hasNewChange = newlyDetected.length > 0 || res.totalCount > prevCount;
+    const isFirstSync = !lastSyncedLatestLogNo;
+    lastSyncedLatestLogNo = String(data.posts[0]?.logNo || lastSyncedLatestLogNo || '');
     lastSyncedTotalCount = res.totalCount;
 
     const now = new Date();
@@ -12582,28 +12599,40 @@ async function syncLiveBlogPosts(silent = false) {
     const timeStr = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
     updatePublishedStatsUI({ ok: true, totalCount: res.totalCount, timeStr });
 
-    if (hasNewChange || isFirstSync || !silent) {
-      if (currentKeywordItem && typeof checkPublishedStatus === 'function' && checkPublishedStatus(currentKeywordItem.keyword).status !== 'fresh') {
+    // Always re-verify active keyword and lists whenever new posts are detected OR on first sync / manual sync
+    const currentIsNowPublished = Boolean(
+      currentKeywordItem && typeof checkPublishedStatus === 'function' && checkPublishedStatus(currentKeywordItem.keyword).status !== 'fresh'
+    );
+
+    if (hasNewChange || isFirstSync || currentIsNowPublished || !silent) {
+      if (currentIsNowPublished) {
         currentKeywordItem = getDefaultFreshItem();
         currentPlan = currentKeywordItem?.plan || 1;
       }
+      invalidatePhotoAllocationCache();
       renderSidebarKeywords();
       renderRadarGrid();
       renderScheduleView();
-      if (currentView === 'writer' && (hasNewChange || !silent)) renderWriterView();
-      if (currentView === 'published') renderPublishedPostsView();
+      if (currentView === 'writer' && (hasNewChange || currentIsNowPublished || !silent)) {
+        renderWriterView();
+      }
+      if (currentView === 'published') {
+        renderPublishedPostsView();
+      }
+      syncPhotoControlsUI();
     }
 
     if (hasNewChange) {
-      showToast(`🔄 새 글 감지 (${res.totalCount}편) · 목록 자동 업데이트됨`);
+      const latestTitle = newlyDetected[0]?.title ? `"${String(newlyDetected[0].title).slice(0, 18)}..." ` : '';
+      showToast(`🔄 새 발행글 ${latestTitle}감지 (${res.totalCount}편) · 키워드 자동 제외됨!`);
     } else if (!silent) {
-      showToast(`🔄 ${res.totalCount}편 동기화 완료`);
+      showToast(`🔄 블로그 실시간 동기화 완료 (총 ${res.totalCount}편 제외 중)`);
     }
   } catch (err) {
     updatePublishedStatsUI(lastLiveSyncMeta);
     if (!silent) {
-      const fallbackCnt = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 62;
-      showToast(`🟢 ${fallbackCnt}편 기준`);
+      const fallbackCnt = typeof getTotalPublishedCount === 'function' ? getTotalPublishedCount() : 63;
+      showToast(`🟢 ${fallbackCnt}편 기준 동기화 유지 중`);
     }
   } finally {
     syncButtons.forEach(btn => {
@@ -12688,7 +12717,7 @@ function initApp() {
     }, 150);
     setInterval(() => {
       if (!document.hidden) syncLiveBlogPosts(true);
-    }, 45000);
+    }, 20000);
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden) syncLiveBlogPosts(true);
     });
